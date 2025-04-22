@@ -68,24 +68,24 @@ rolling in wealth."""
 
 # Task 1
 adventures_of_tom_sawyer = adventures_of_tom_sawyer.replace("\n", " ")
+
 print(adventures_of_tom_sawyer)
 
-print(SEPARATOR)
 # Task 2
 adventures_of_tom_sawyer = adventures_of_tom_sawyer.replace("....", " ")
+
 print(adventures_of_tom_sawyer)
 
-print(SEPARATOR)
 # Task 3
 adventures_of_tom_sawyer = " ".join(adventures_of_tom_sawyer.split())
+
 print(adventures_of_tom_sawyer)
 
-print(SEPARATOR)
 # Task 4
 count_h = adventures_of_tom_sawyer.count("h")
+
 print(f'The letter "h" appears {count_h} times in the text.')
 
-print(SEPARATOR)
 # Task 5
 words = adventures_of_tom_sawyer.split()
 capitalized_words = 0
@@ -96,47 +96,37 @@ for word in words:
 
 print(f'Number of words starting with a capital letter = {capitalized_words}')
 
-print(SEPARATOR)
 # Task 6
-list_of_words = adventures_of_tom_sawyer.split()
-first_position_of_name = list_of_words.index("Tom")
-cut_first_found_name = list_of_words[first_position_of_name + 1:]
-second_index = cut_first_found_name.index("Tom")
-second_position_of_name = first_position_of_name + 1 + second_index
+first_index = adventures_of_tom_sawyer.find("Tom")
+second_index = adventures_of_tom_sawyer.find("Tom", first_index + 1)
 
-print(f'The second appearance of the name "Tom" is in position = {second_position_of_name} in the list')
+print(f'The second "Tom" appears at character index: {second_index}')
 
-print(SEPARATOR)
 # Task 7
-adventures_of_tom_sawyer_sentences = adventures_of_tom_sawyer.split(".")
+adventures_of_tom_sawyer_sentences = []
+
+for sentence in adventures_of_tom_sawyer.split("."):
+    cleaned = sentence.strip()
+    if cleaned:
+        adventures_of_tom_sawyer_sentences.append(cleaned + ".")
+
 print(adventures_of_tom_sawyer_sentences)
 
-print(SEPARATOR)
 # Task 8
-print(adventures_of_tom_sawyer_sentences[3].lower())
+adventures_of_tom_sawyer_sentences_4_sen = adventures_of_tom_sawyer_sentences[3].lower()
 
-print(SEPARATOR)
+print(f'The fourth sentence is in lowercase : {adventures_of_tom_sawyer_sentences_4_sen}')
+
 # Task 9
 for sentence in adventures_of_tom_sawyer_sentences:
     if sentence.startswith("By the time"):
-        print('Found a sentence starting with "By the time":' + sentence)
+        print('Found a sentence starting with "By the time" : ' + sentence)
         break
 else:
     print('No sentence starts with "By the time".')
 
-print(SEPARATOR)
 # Task 10
-# Здесь было сложно, так как при использовании strip(".") в задаче №7 Python добавлял пустой элемент в конце списка.
-# Мы пока не так глубоко изучали циклы for, поэтому я не смог отфильтровать только непустые предложения.
-# По этой причине я просто добавил проверку: если последний элемент пустой, то берём предпоследний.
-# Таким образом, я решил задачу, используя знания, которые есть на данный момент.
-
-if adventures_of_tom_sawyer_sentences[-1].strip() == "":
-    last_sentence = adventures_of_tom_sawyer_sentences[-2]
-else:
-    last_sentence = adventures_of_tom_sawyer_sentences[-1]
-
-words_in_last_sentence = last_sentence.split()
-word_count = len(words_in_last_sentence)
+last_sentence = adventures_of_tom_sawyer_sentences[-1]
+word_count = len(last_sentence)
 
 print(f'Number of words in the last sentence = {word_count}')
