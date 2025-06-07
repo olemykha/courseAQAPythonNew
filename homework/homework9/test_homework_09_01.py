@@ -1,4 +1,3 @@
-import pytest
 from homework.homework9.functions import sum_of_two_numbers, average, reverse_string
 
 
@@ -14,10 +13,6 @@ def test_sum_negative_and_positive():
 
 def test_sum_with_zero():
     assert sum_of_two_numbers(0, 0) == 0
-
-
-# def test_sum_large_values():
-#     assert sum_of_two_numbers(1_000_000, 2_000_000) == 3_000_000
 
 
 # Tests for 'average' function
