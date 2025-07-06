@@ -7,7 +7,6 @@ def analyze_heartbeat(input_path: str, output_path: str):
     key = "Key TSTFEED0300|7E3E|0400"
     timestamps = []
 
-    # 1) Считываем и фильтруем
     with open(input_path, 'r', encoding='utf-8') as f:
         for line in f:
             if key in line:
